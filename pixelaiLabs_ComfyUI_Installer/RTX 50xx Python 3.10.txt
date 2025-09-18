@@ -1,0 +1,32 @@
+
+For Nvidia RTX 50xx series graphics cards:
+
+***Works for Python 3.10 only
+
+
+
+After Running the ComfyUI_Installer.bat
+
+1) Click on Activate_Venv.bat
+
+2) copy past the entire commands below and hit enter:
+
+
+python -m pip install --upgrade pip
+
+pip install torch==2.7.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+pip install https://huggingface.co/MonsterMMORPG/SECourses_Premium_Flash_Attention/resolve/main/flash_attn-2.7.4.post1-cp310-cp310-win_amd64.whl
+
+pip install https://files.pythonhosted.org/packages/15/b0/be6cc74fd1e23da20d6c34db923858a8ae5017d39a13dedc188a935c646a/deepspeed-0.16.5-cp310-cp310-win_amd64.whl
+
+pip install https://github.com/woct0rdho/SageAttention/releases/download/v2.1.1-windows/sageattention-2.1.1+cu128torch2.7.0-cp310-cp310-win_amd64.whl
+
+pip install https://huggingface.co/MonsterMMORPG/SECourses_Premium_Flash_Attention/resolve/main/xformers-0.0.30+3abeaa9e.d20250424-cp310-cp310-win_amd64.whl
+
+pip install triton-windows==3.3.0.post19 --upgrade
+
+pip install torchao
+
+
+3) Run Run_Comfyui.bat

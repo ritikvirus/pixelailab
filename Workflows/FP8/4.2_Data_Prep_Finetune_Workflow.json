@@ -1,0 +1,1239 @@
+{
+  "id": "d292760e-56e0-4b43-a4b5-4bd2a28750b5",
+  "revision": 0,
+  "last_node_id": 63,
+  "last_link_id": 85,
+  "nodes": [
+    {
+      "id": 50,
+      "type": "PrimitiveInt",
+      "pos": [
+        29.929855346679688,
+        309.0018310546875
+      ],
+      "size": [
+        241.39996337890625,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            73,
+            82
+          ]
+        }
+      ],
+      "title": "Height",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.29",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        1216,
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 52,
+      "type": "PrimitiveInt",
+      "pos": [
+        -245.24774169921875,
+        309.5059814453125
+      ],
+      "size": [
+        245.4000244140625,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            72
+          ]
+        }
+      ],
+      "title": "Width",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.29",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        832,
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 56,
+      "type": "JWImageResizeByShorterSide",
+      "pos": [
+        -237.55796813964844,
+        641.744140625
+      ],
+      "size": [
+        501.3414001464844,
+        86.92486572265625
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 80
+        },
+        {
+          "name": "size",
+          "type": "INT",
+          "widget": {
+            "name": "size"
+          },
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-various",
+        "ver": "5bd85aaf7616878471469c4ec7e11bbd0cef3bf2",
+        "Node name for S&R": "JWImageResizeByShorterSide",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        512,
+        "bicubic"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 47,
+      "type": "ImageCrop+",
+      "pos": [
+        -235.30601501464844,
+        787.2820434570312
+      ],
+      "size": [
+        500.9136962890625,
+        194
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 81
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 72
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 73
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            77,
+            83
+          ]
+        },
+        {
+          "name": "x",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "y",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "1.1.0",
+        "Node name for S&R": "ImageCrop+",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        832,
+        1152,
+        "top-center",
+        0,
+        0
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 35,
+      "type": "Image Save",
+      "pos": [
+        304.20184326171875,
+        312.9249267578125
+      ],
+      "size": [
+        324.1068420410156,
+        431.7206115722656
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 83
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "D:\\Images\\Dataset2",
+        "",
+        "",
+        1,
+        "false",
+        "png",
+        300,
+        100,
+        "true",
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 19,
+      "type": "ListCounter //Inspire",
+      "pos": [
+        660.5570678710938,
+        532.7822875976562
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "signal",
+          "type": "*",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-inspire-pack",
+        "ver": "0f38db4180ce7836a80765111b87d5b4376a7a45",
+        "Node name for S&R": "ListCounter //Inspire",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        1
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 53,
+      "type": "PreviewImage",
+      "pos": [
+        657.2328491210938,
+        579.4566650390625
+      ],
+      "size": [
+        525.8557739257812,
+        403.1269226074219
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 77
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 55,
+      "type": "Note",
+      "pos": [
+        -241.98037719726562,
+        455.199462890625
+      ],
+      "size": [
+        510.7881774902344,
+        127.77969360351562
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️\nImage Dimension Control\nExamples:\n1.0 = 1024w x 1024h\n1.38 = 1152w x 832h"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 26,
+      "type": "Text Find and Replace",
+      "pos": [
+        2789.5439453125,
+        344.4266052246094
+      ],
+      "size": [
+        273.767578125,
+        142
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_text",
+          "type": "STRING",
+          "links": [
+            39
+          ]
+        },
+        {
+          "name": "replacement_count_number",
+          "type": "NUMBER",
+          "links": null
+        },
+        {
+          "name": "replacement_count_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "replacement_count_int",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Text Find and Replace",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        " A photograph",
+        "photo"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 24,
+      "type": "Text Find and Replace",
+      "pos": [
+        2484.887939453125,
+        340.3256530761719
+      ],
+      "size": [
+        273.767578125,
+        142
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_text",
+          "type": "STRING",
+          "links": [
+            55
+          ]
+        },
+        {
+          "name": "replacement_count_number",
+          "type": "NUMBER",
+          "links": null
+        },
+        {
+          "name": "replacement_count_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "replacement_count_int",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Text Find and Replace",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "A woman",
+        "photo of a lady"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 23,
+      "type": "Text Find and Replace",
+      "pos": [
+        2486.18994140625,
+        145.60479736328125
+      ],
+      "size": [
+        273.767578125,
+        142
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_text",
+          "type": "STRING",
+          "links": [
+            35
+          ]
+        },
+        {
+          "name": "replacement_count_number",
+          "type": "NUMBER",
+          "links": null
+        },
+        {
+          "name": "replacement_count_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "replacement_count_int",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Text Find and Replace",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "a woman",
+        "a lady"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 3,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2069.511962890625,
+        152.18310546875
+      ],
+      "size": [
+        379.7968444824219,
+        5076
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "aac13aa7ce35b07d43633c3bbe654a38c00d74f5",
+        "Node name for S&R": "ShowText|pysssss",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "Photo of a young woman with fair skin and red hair, sitting on a gray couch in a modern living room with a neutral color palette. She has a slender build and is wearing a blue denim dress with a zipper in the front, which is unzipped, revealing a hint of her panties. She has a relaxed and confident expression, looking directly at the camera. The lighting is soft and natural, coming from the left side of the frame. The background includes a round mirror with a black frame, a potted plant, and a wall-mounted flat-screen TV.",
+        "Photo of a young woman with red hair, wearing a blue denim dress with a zipper down the front, sitting on a gray couch in a modern living room. She has a slender build, fair skin, and is looking directly at the camera with a neutral expression. The room has a large round mirror on the wall behind her, a small plant in the corner, and a white textured rug on the floor. The lighting is soft and natural, and the overall mood is relaxed and casual. JPEG artifacts.",
+        "A photo of a woman with long red hair and fair skin, sitting on a black couch, wearing a red one-piece swimsuit. She has blue eyes and a small smile, looking directly at the camera. The background includes a window with white blinds, a potted plant with green leaves and yellow flowers, and a wooden floor. The lighting is natural and bright, casting soft shadows. The woman has a slender physique and a relaxed pose, with her right arm extended towards the camera. The image has a casual and intimate feel.",
+        "Photo of a woman with long red hair, sitting on the floor in front of a mirror, holding a phone in her hand, wearing a blue ribbed sweater and matching leggings, white socks with black letters on them, white bed with a brown headboard and white pillows behind her, light-colored walls, wooden floor, bright natural lighting, casual pose, relaxed expression, medium close-up, no watermark, high quality, jpeg artifacts",
+        "Photo of a woman with long, wavy red hair and fair skin, sitting on a grey couch with her hands resting on the backrest. She is wearing a sheer, navy blue lace dress that is semi-transparent, revealing her breasts and nipples underneath. The dress has a lace bodice with a ribbon tied in the front. She has a neutral expression and is looking directly at the camera. The background is a plain, light grey wall. The lighting is soft and even, with no harsh shadows. The image is high quality and has a watermark in the bottom right corner.",
+        "Photo of a woman with long, curly red hair and fair skin, wearing a blue denim romper with a deep V-neck, sitting on a wooden floor in a bright, modern room. The woman has a slender build and is looking directly at the camera with a neutral expression. She has freckles on her face and is wearing natural makeup. The background features a concrete wall, a large green plant, and a shelf with potted plants. The lighting is soft and natural, casting gentle shadows. The photo has a high resolution and is taken with a Canon EOS 5D Mark III.",
+        "A photo of a woman with long, wavy red hair and glasses, wearing a white top that shows some cleavage. She is smiling and looking at the camera, with a relaxed and confident expression. The background is a modern kitchen with white cabinets, a black countertop, and a potted plant. The lighting is soft and natural, coming from a window with white blinds on the right side of the image. The photo has a warm and inviting atmosphere."
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 7,
+      "type": "LoadImageListFromDir //Inspire",
+      "pos": [
+        -589.0195922851562,
+        306.3352966308594
+      ],
+      "size": [
+        313.0787048339844,
+        170
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            28,
+            64,
+            80
+          ]
+        },
+        {
+          "name": "MASK",
+          "shape": 6,
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "FILE PATH",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-inspire-pack",
+        "ver": "0f38db4180ce7836a80765111b87d5b4376a7a45",
+        "Node name for S&R": "LoadImageListFromDir //Inspire"
+      },
+      "widgets_values": [
+        "D:\\Images",
+        0,
+        0,
+        false
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 36,
+      "type": "Note",
+      "pos": [
+        649.3025512695312,
+        320.5555114746094
+      ],
+      "size": [
+        210,
+        165.0289306640625
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Save Resized images in a new folder."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 20,
+      "type": "CR Integer To String",
+      "pos": [
+        872.9529418945312,
+        532.7822875976562
+      ],
+      "size": [
+        210,
+        61.383644104003906
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            26
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Integer To String",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 6,
+      "type": "Joy_caption_two_load",
+      "pos": [
+        1344.9259033203125,
+        147.4410400390625
+      ],
+      "size": [
+        388.9931945800781,
+        64.864990234375
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "JoyTwoPipeline",
+          "type": "JoyTwoPipeline",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_slk_joy_caption_two",
+        "ver": "0.0.8",
+        "Node name for S&R": "Joy_caption_two_load",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "Orenguteng/Llama-3.1-8B-Lexi-Uncensored-V2"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 57,
+      "type": "Note",
+      "pos": [
+        1754.949951171875,
+        146.93936157226562
+      ],
+      "size": [
+        232.90089416503906,
+        88
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "LLama 3.1 Uncensorored V2 supports NSFW"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 5,
+      "type": "Joy_caption_two",
+      "pos": [
+        1349.6156005859375,
+        314.2833557128906
+      ],
+      "size": [
+        380.8094787597656,
+        159.57862854003906
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "joy_two_pipeline",
+          "type": "JoyTwoPipeline",
+          "link": 4
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_slk_joy_caption_two",
+        "ver": "0.0.8",
+        "Node name for S&R": "Joy_caption_two",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "Training Prompt",
+        "long",
+        false
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 58,
+      "type": "Note",
+      "pos": [
+        1749.8765869140625,
+        313.11676025390625
+      ],
+      "size": [
+        239.6166229248047,
+        157.39584350585938
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Caption type\nTraining Prompt works better.\n\nYou can experiment with Descriptive."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "Save Text File",
+      "pos": [
+        2484.244873046875,
+        577.129638671875
+      ],
+      "size": [
+        580.706787109375,
+        271.4010314941406
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 39
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 26
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Save Text File"
+      },
+      "widgets_values": [
+        "D:\\Images\\Dataset",
+        "ComfyUI",
+        "",
+        0,
+        ".txt",
+        "utf-8",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 59,
+      "type": "Note",
+      "pos": [
+        2802.423583984375,
+        144.1287384033203
+      ],
+      "size": [
+        241.5753631591797,
+        123.65390014648438
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Here i'm replacing few keywords that have a heavy impact on image output result."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 61,
+      "type": "Label (rgthree)",
+      "pos": [
+        -621.7073364257812,
+        -188.63131713867188
+      ],
+      "size": [
+        1729.94384765625,
+        75
+      ],
+      "flags": {
+        "pinned": true,
+        "allow_interaction": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Data Prep Workflow for Finetuning or LoRA Training",
+      "properties": {
+        "fontSize": 75,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 60,
+      "type": "Label (rgthree)",
+      "pos": [
+        -627.4571533203125,
+        -375.79705810546875
+      ],
+      "size": [
+        1092.1875,
+        150
+      ],
+      "flags": {
+        "pinned": true,
+        "allow_interaction": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "PixelaiLabs.com",
+      "properties": {
+        "fontSize": 150,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 62,
+      "type": "Note",
+      "pos": [
+        3098.607421875,
+        594.7056884765625
+      ],
+      "size": [
+        241.5753631591797,
+        123.65390014648438
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Save text path should be the same path where you saved your resized images."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      4,
+      6,
+      0,
+      5,
+      0,
+      "JoyTwoPipeline"
+    ],
+    [
+      6,
+      5,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      25,
+      19,
+      0,
+      20,
+      0,
+      "INT"
+    ],
+    [
+      26,
+      20,
+      0,
+      21,
+      1,
+      "STRING"
+    ],
+    [
+      28,
+      7,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      33,
+      3,
+      0,
+      23,
+      0,
+      "STRING"
+    ],
+    [
+      35,
+      23,
+      0,
+      24,
+      0,
+      "STRING"
+    ],
+    [
+      39,
+      26,
+      0,
+      21,
+      0,
+      "STRING"
+    ],
+    [
+      55,
+      24,
+      0,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      64,
+      7,
+      0,
+      5,
+      1,
+      "IMAGE"
+    ],
+    [
+      72,
+      52,
+      0,
+      47,
+      1,
+      "INT"
+    ],
+    [
+      73,
+      50,
+      0,
+      47,
+      2,
+      "INT"
+    ],
+    [
+      77,
+      47,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      80,
+      7,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      81,
+      56,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      82,
+      50,
+      0,
+      56,
+      1,
+      "INT"
+    ],
+    [
+      83,
+      47,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Images Resize Group",
+      "bounding": [
+        -621.4088134765625,
+        -3.263986825942993,
+        1865.85498046875,
+        1104.2000732421875
+      ],
+      "color": "#444",
+      "font_size": 72,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Joy Caption 2 Group",
+      "bounding": [
+        1323.3133544921875,
+        -0.5738088488578796,
+        2077.1171875,
+        5166.17822265625
+      ],
+      "color": "#444",
+      "font_size": 72,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.35584102738369405,
+      "offset": [
+        1402.6400989342342,
+        898.7622437789969
+      ]
+    },
+    "frontendVersion": "1.19.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

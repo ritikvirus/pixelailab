@@ -1,0 +1,1147 @@
+{
+  "id": "d292760e-56e0-4b43-a4b5-4bd2a28750b5",
+  "revision": 0,
+  "last_node_id": 84,
+  "last_link_id": 111,
+  "nodes": [
+    {
+      "id": 61,
+      "type": "Label (rgthree)",
+      "pos": [
+        -621.7073364257812,
+        -188.63131713867188
+      ],
+      "size": [
+        1713.28125,
+        75
+      ],
+      "flags": {
+        "pinned": true,
+        "allow_interaction": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Data Prep Workflow for Finetuning & LoRA Training",
+      "properties": {
+        "fontSize": 75,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 60,
+      "type": "Label (rgthree)",
+      "pos": [
+        -627.4571533203125,
+        -375.79705810546875
+      ],
+      "size": [
+        1092.1875,
+        150
+      ],
+      "flags": {
+        "pinned": true,
+        "allow_interaction": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "PixelaiLabs.com",
+      "properties": {
+        "fontSize": 150,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 53,
+      "type": "PreviewImage",
+      "pos": [
+        616.76806640625,
+        224.49557495117188
+      ],
+      "size": [
+        588.8755493164062,
+        644.3901977539062
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 109
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 77,
+      "type": "GetNode",
+      "pos": [
+        613.0878295898438,
+        173.1582489013672
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            109
+          ]
+        }
+      ],
+      "title": "Get_IMAGES",
+      "properties": {},
+      "widgets_values": [
+        "IMAGES"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 75,
+      "type": "SetNode",
+      "pos": [
+        -200.2178497314453,
+        188.13302612304688
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 107
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_IMAGES",
+      "properties": {
+        "previousName": "IMAGES"
+      },
+      "widgets_values": [
+        "IMAGES"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 7,
+      "type": "LoadImageListFromDir //Inspire",
+      "pos": [
+        -585.0796508789062,
+        235.41722106933594
+      ],
+      "size": [
+        528.216552734375,
+        207.58277893066406
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            28,
+            99,
+            107
+          ]
+        },
+        {
+          "name": "MASK",
+          "shape": 6,
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "FILE PATH",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-inspire-pack",
+        "ver": "0f38db4180ce7836a80765111b87d5b4376a7a45",
+        "Node name for S&R": "LoadImageListFromDir //Inspire"
+      },
+      "widgets_values": [
+        "PATH\\TO\\DATASET",
+        0,
+        0,
+        false,
+        "None"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 78,
+      "type": "Note",
+      "pos": [
+        -575.8287963867188,
+        488.73406982421875
+      ],
+      "size": [
+        514.230712890625,
+        88
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "SET THE PATH TO THE FOLDER WITH CLEAN DATASET YOU GENERATED."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 80,
+      "type": "Note",
+      "pos": [
+        -578.212158203125,
+        765.236083984375
+      ],
+      "size": [
+        514.230712890625,
+        164.27633666992188
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "SET THE PATH TO THE NEW FOLDER CREATED INSIDE YOUR DATASET DIRECTORY.\n\nPLEASE DON'T FORGET TO ADD AT THE END \"\\\" for Windows or \"/\" for Linux (Runpod"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 81,
+      "type": "SetNode",
+      "pos": [
+        315.2853088378906,
+        184.4805145263672
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "link": 110
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_STRING",
+      "properties": {
+        "previousName": "STRING"
+      },
+      "widgets_values": [
+        "STRING"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 82,
+      "type": "GetNode",
+      "pos": [
+        2308.72119140625,
+        470.32666015625
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            111
+          ]
+        }
+      ],
+      "title": "Get_STRING",
+      "properties": {},
+      "widgets_values": [
+        "STRING"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 6,
+      "type": "Joy_caption_two_load",
+      "pos": [
+        1330.80078125,
+        397.8898010253906
+      ],
+      "size": [
+        388.9931945800781,
+        64.864990234375
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "JoyTwoPipeline",
+          "type": "JoyTwoPipeline",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_slk_joy_caption_two",
+        "ver": "0.0.8",
+        "Node name for S&R": "Joy_caption_two_load",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "John6666/Llama-3.1-8B-Lexi-Uncensored-V2-nf4"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 57,
+      "type": "Note",
+      "pos": [
+        1757.33349609375,
+        378.1517333984375
+      ],
+      "size": [
+        232.90089416503906,
+        88
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "LLama 3.1 Uncensorored V2 supports NSFW"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 58,
+      "type": "Note",
+      "pos": [
+        1752.2601318359375,
+        544.3292236328125
+      ],
+      "size": [
+        239.6166229248047,
+        157.39584350585938
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Caption type\nTraining Prompt works better.\n\nYou can experiment with Descriptive."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 76,
+      "type": "GetNode",
+      "pos": [
+        1350.45166015625,
+        798.4140014648438
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            108
+          ]
+        }
+      ],
+      "title": "Get_IMAGES",
+      "properties": {},
+      "widgets_values": [
+        "IMAGES"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 5,
+      "type": "Joy_caption_two",
+      "pos": [
+        1335.490478515625,
+        522.7800903320312
+      ],
+      "size": [
+        377.2340393066406,
+        194.14134216308594
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "joy_two_pipeline",
+          "type": "JoyTwoPipeline",
+          "link": 4
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            106
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_slk_joy_caption_two",
+        "ver": "0.0.8",
+        "Node name for S&R": "Joy_caption_two",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        "Booru tag list",
+        "medium-length",
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 72,
+      "type": "ttN text",
+      "pos": [
+        2016.69140625,
+        375.1683044433594
+      ],
+      "size": [
+        413.1099853515625,
+        129.68276977539062
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_tinyterranodes",
+        "ver": "1a90e43480563e9202f7f5482629b1d444e805ed",
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "candid smartphone photo, natural light, bokeh background, grainy, authentic, unposed, street photography"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 73,
+      "type": "CR Text Concatenate",
+      "pos": [
+        2154.35107421875,
+        554.5302124023438
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text1",
+          "shape": 7,
+          "type": "STRING",
+          "link": 106
+        },
+        {
+          "name": "text2",
+          "shape": 7,
+          "type": "STRING",
+          "link": 103
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "*",
+          "links": [
+            105
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Text Concatenate"
+      },
+      "widgets_values": [
+        ", "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 83,
+      "type": "Note",
+      "pos": [
+        2019.2354736328125,
+        708.689208984375
+      ],
+      "size": [
+        408.7896423339844,
+        95.96455383300781
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "YOU CAN ADD ANY TEXT TO YOUR IMAGE CAPTIONS USING THE TEXT NODE ABOVE"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 68,
+      "type": "JWImageSaveToPath",
+      "pos": [
+        7.918740749359131,
+        347.7989501953125
+      ],
+      "size": [
+        210,
+        90.37227630615234
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 99
+        },
+        {
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": 96
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfyui-various",
+        "ver": "5bd85aaf7616878471469c4ec7e11bbd0cef3bf2",
+        "Node name for S&R": "JWImageSaveToPath"
+      },
+      "widgets_values": [
+        "./image.png",
+        "false"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 19,
+      "type": "ListCounter //Inspire",
+      "pos": [
+        7.350564479827881,
+        239.24131774902344
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "signal",
+          "type": "*",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-inspire-pack",
+        "ver": "0f38db4180ce7836a80765111b87d5b4376a7a45",
+        "Node name for S&R": "ListCounter //Inspire",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 20,
+      "type": "CR Integer To String",
+      "pos": [
+        238.78070068359375,
+        238.69256591796875
+      ],
+      "size": [
+        210,
+        61.383644104003906
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            95,
+            110
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Integer To String",
+        "ttNbgOverride": {
+          "color": "#233",
+          "bgcolor": "#355",
+          "groupcolor": "#8AA"
+        }
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 70,
+      "type": "ttN concat",
+      "pos": [
+        242.2890167236328,
+        351.0508728027344
+      ],
+      "size": [
+        400,
+        220
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text1",
+          "type": "STRING",
+          "widget": {
+            "name": "text1"
+          },
+          "link": 94
+        },
+        {
+          "name": "text2",
+          "type": "STRING",
+          "widget": {
+            "name": "text2"
+          },
+          "link": 95
+        }
+      ],
+      "outputs": [
+        {
+          "name": "concat",
+          "type": "STRING",
+          "links": [
+            96
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_tinyterranodes",
+        "ver": "1a90e43480563e9202f7f5482629b1d444e805ed",
+        "Node name for S&R": "ttN concat",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ".png",
+        ""
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 65,
+      "type": "easy saveText",
+      "pos": [
+        2495.932373046875,
+        377.4164733886719
+      ],
+      "size": [
+        557.8718872070312,
+        159.75123596191406
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 105
+        },
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "file_name",
+          "type": "STRING",
+          "widget": {
+            "name": "file_name"
+          },
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "a72a4dc40f7fec4df125c3850647fb09851bd04f",
+        "Node name for S&R": "easy saveText"
+      },
+      "widgets_values": [
+        "PATH\\TO\\DATASET\\NEWFOLDER\\",
+        "",
+        "txt",
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 69,
+      "type": "easy string",
+      "pos": [
+        -582.2192993164062,
+        623.0706787109375
+      ],
+      "size": [
+        525.1569213867188,
+        86.23046875
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            94
+          ]
+        }
+      ],
+      "title": "NEW FOLDER PATH",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "a72a4dc40f7fec4df125c3850647fb09851bd04f",
+        "Node name for S&R": "easy string"
+      },
+      "widgets_values": [
+        "PATH\\TO\\DATASET\\NEWFOLDER\\"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 84,
+      "type": "Note",
+      "pos": [
+        2502.443115234375,
+        608.7139282226562
+      ],
+      "size": [
+        545.57080078125,
+        161.5900421142578
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "SET THE PATH ABOVE TO SAVE YOUR CAPTION FILES. SHOULD BE THE SAME FROM NEW FOLDER PATH NODE."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      4,
+      6,
+      0,
+      5,
+      0,
+      "JoyTwoPipeline"
+    ],
+    [
+      25,
+      19,
+      0,
+      20,
+      0,
+      "INT"
+    ],
+    [
+      28,
+      7,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      94,
+      69,
+      0,
+      70,
+      0,
+      "STRING"
+    ],
+    [
+      95,
+      20,
+      0,
+      70,
+      1,
+      "STRING"
+    ],
+    [
+      96,
+      70,
+      0,
+      68,
+      1,
+      "STRING"
+    ],
+    [
+      99,
+      7,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      103,
+      72,
+      0,
+      73,
+      1,
+      "STRING"
+    ],
+    [
+      105,
+      73,
+      0,
+      65,
+      0,
+      "STRING"
+    ],
+    [
+      106,
+      5,
+      0,
+      73,
+      0,
+      "STRING"
+    ],
+    [
+      107,
+      7,
+      0,
+      75,
+      0,
+      "*"
+    ],
+    [
+      108,
+      76,
+      0,
+      5,
+      1,
+      "IMAGE"
+    ],
+    [
+      109,
+      77,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      110,
+      20,
+      0,
+      81,
+      0,
+      "*"
+    ],
+    [
+      111,
+      82,
+      0,
+      65,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Save Image Group",
+      "bounding": [
+        -621.4088134765625,
+        -3.263986825942993,
+        1865.85498046875,
+        1104.2000732421875
+      ],
+      "color": "#444",
+      "font_size": 72,
+      "flags": {
+        "pinned": true
+      }
+    },
+    {
+      "id": 3,
+      "title": "Joy Caption 2 Group",
+      "bounding": [
+        1297.7657470703125,
+        -4.243383407592773,
+        1775.263671875,
+        1117.5130615234375
+      ],
+      "color": "#444",
+      "font_size": 72,
+      "flags": {
+        "pinned": true
+      }
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.3234918430760965,
+      "offset": [
+        1721.0381732439669,
+        694.1614226469505
+      ]
+    },
+    "frontendVersion": "1.25.11",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

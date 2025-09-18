@@ -1,0 +1,417 @@
+{
+  "id": "7db127f5-f860-4446-9cc8-efe303eec604",
+  "revision": 0,
+  "last_node_id": 11,
+  "last_link_id": 9,
+  "nodes": [
+    {
+      "id": 9,
+      "type": "Label (rgthree)",
+      "pos": [
+        234.43711853027344,
+        -3382.36376953125
+      ],
+      "size": [
+        1042.08984375,
+        150
+      ],
+      "flags": {
+        "pinned": true,
+        "allow_interaction": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Pixelailabs.com",
+      "properties": {
+        "fontSize": 150,
+        "fontFamily": "Arial",
+        "fontColor": "#fafafa",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 10,
+      "type": "Label (rgthree)",
+      "pos": [
+        244.18064880371094,
+        -3232.312744140625
+      ],
+      "size": [
+        1179.89501953125,
+        75
+      ],
+      "flags": {
+        "pinned": true,
+        "allow_interaction": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Dataset Generation (Nano Banana)",
+      "properties": {
+        "fontSize": 75,
+        "fontFamily": "Arial",
+        "fontColor": "#fafafa",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        201.59774780273438,
+        -2968.748779296875
+      ],
+      "size": [
+        400.555419921875,
+        422.8517150878906
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.54",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "FaceGen_00198_.png",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 2,
+      "type": "GeminiImageNode",
+      "pos": [
+        701.0278930664062,
+        -2968.85888671875
+      ],
+      "size": [
+        429.10174560546875,
+        1019.8992919921875
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.54",
+        "Node name for S&R": "GeminiImageNode"
+      },
+      "widgets_values": [
+        "Make the same woman with blonde hair, light green eyes, full lips, and large breasts. She is wearing a minimalist black bikini top. She is in a natural rock pool by the ocean, with the water glistening, under bright overcast sky. Her pose is a direct gaze at the camera, with a serious yet captivating expression, hair slicked back. Close-up headshot, eye-level. candid smartphone photo, natural light, bokeh background, grainy, authentic, unposed, street photography",
+        "gemini-2.5-flash-image-preview",
+        919302025735514,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 6,
+      "type": "ImageBatch",
+      "pos": [
+        390.3208923339844,
+        -2465.217529296875
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.54",
+        "Node name for S&R": "ImageBatch"
+      },
+      "widgets_values": [],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        201.20782470703125,
+        -2368.185791015625
+      ],
+      "size": [
+        395.37200927734375,
+        414.3697509765625
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.54",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "black_twopiece_1.webp",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 11,
+      "type": "Note",
+      "pos": [
+        212.6881561279297,
+        -1895.2420654296875
+      ],
+      "size": [
+        374.9123840332031,
+        148.94740295410156
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Incase you want to use 2 reference images Unbypass Batch Images and Load Image nodes."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 4,
+      "type": "PreviewAny",
+      "pos": [
+        1207.1090087890625,
+        -2079.047119140625
+      ],
+      "size": [
+        361.3264465332031,
+        134.3782958984375
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.54",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "SaveImage",
+      "pos": [
+        1200.8814697265625,
+        -2966.496826171875
+      ],
+      "size": [
+        492.9394226074219,
+        805.4974365234375
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.54",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "NanoBanana/model1"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    }
+  ],
+  "links": [
+    [
+      3,
+      2,
+      1,
+      4,
+      0,
+      "*"
+    ],
+    [
+      5,
+      1,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      6,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      8,
+      7,
+      0,
+      6,
+      1,
+      "IMAGE"
+    ],
+    [
+      9,
+      2,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "IMAGE GEN NANO BANANA",
+      "bounding": [
+        191.20782470703125,
+        -3042.458984375,
+        1525.2579345703125,
+        1349.7225341796875
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.4500000000000323,
+      "offset": [
+        1170.7601771889101,
+        3472.7832136099832
+      ]
+    },
+    "frontendVersion": "1.25.11",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
