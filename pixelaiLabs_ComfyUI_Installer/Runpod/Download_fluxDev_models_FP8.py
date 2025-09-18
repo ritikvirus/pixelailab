@@ -13,7 +13,21 @@ from huggingface_hub.utils import (
 )
 
 # --- Configuration ---
-BASE_DOWNLOAD_DIR = "ComfyUI/models"
+def _resolve_models_dir():
+    env_dir = os.environ.get("COMFY_MODELS_DIR")
+    if env_dir:
+        return env_dir
+    for base in ("/Workspace/ComfyUI/models", "/workspace/ComfyUI/models"):
+        try:
+            os.makedirs(base, exist_ok=True)
+            return base
+        except Exception:
+            continue
+    fallback = os.path.join(os.getcwd(), "ComfyUI", "models")
+    os.makedirs(fallback, exist_ok=True)
+    return fallback
+
+BASE_DOWNLOAD_DIR = _resolve_models_dir()
 USE_SYMLINKS = False  # Copy files instead of symlinking to ensure compatibility
 MAX_CONCURRENT_DOWNLOADS = 4  # Adjust based on your bandwidth and system capabilities
 

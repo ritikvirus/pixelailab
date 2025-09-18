@@ -54,7 +54,15 @@ ensure_jupyter() {
 start_jupyter() {
   if command -v jupyter >/dev/null 2>&1; then
     echo "[runpod-start] Starting JupyterLab (port 8888, root=$WORKDIR)"
-    nohup jupyter lab --no-browser --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.notebook_dir="$WORKDIR" >/var/log/jupyterlab.log 2>&1 &
+    nohup jupyter lab \
+      --no-browser \
+      --ip=0.0.0.0 \
+      --port=8888 \
+      --allow-root \
+      --ServerApp.token='' \
+      --ServerApp.password='' \
+      --ServerApp.root_dir="$WORKDIR" \
+      >/var/log/jupyterlab.log 2>&1 &
   fi
 }
 
@@ -69,6 +77,26 @@ if [ ! -f "$BOOT_MARK" ]; then
     echo "[runpod-start] First boot: running installer at $INSTALLER_PATH"
     bash "$INSTALLER_PATH" || echo "[runpod-start] WARNING: Installer returned non-zero."
     echo "installed=$(date -u +%FT%TZ)" > "$BOOT_MARK"
+    # After successful install, set env for model downloaders and run them sequentially (best-effort)
+    export COMFY_MODELS_DIR="$WORKDIR/ComfyUI/models"
+    cd "$WORKDIR/pixelaiLabs_ComfyUI_Installer" 2>/dev/null || cd "$WORKDIR/pixelaiLabs_ComfyUI_Installer/Runpod" 2>/dev/null || true
+    # Non-interactive attempts: prefer GGUF lower-size sets to avoid quota explosions; skip on failure
+    for script in \
+      Runpod/Download_models_GGUF.py \
+      Runpod/Download_models_GGUF_VACE.py \
+      Runpod/Download_models_Flux_Kontext_GGUF.py \
+      Runpod/Download_models_GGUF_PHANTOM.py \
+      Runpod/Download_wan2-2_T2V.py \
+      Runpod/Download_wan2-2_I2V.py \
+      Runpod/Download_models_NSFW.py; do
+      if [ -f "$script" ]; then
+        echo "[runpod-start] Running model downloader: $script"
+        python3 "$script" <<EOF || echo "[runpod-start] Downloader $script finished with errors (continuing)"
+1
+1
+EOF
+      fi
+    done
   else
     echo "[runpod-start] WARNING: Installer script not found; proceeding without install."
   fi
